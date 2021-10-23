@@ -68,8 +68,8 @@ GEM
     autoprefixer-rails (10.3.3.0)
       execjs (~> 2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.516.0)
-    aws-sdk-core (3.121.2)
+    aws-partitions (1.518.0)
+    aws-sdk-core (3.121.3)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
       aws-sigv4 (~> 1.1)
@@ -247,7 +247,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2021.4)
+    tzinfo-data (1.2021.5)
       tzinfo (>= 1.0.0)
     web-console (4.1.0)
       actionview (>= 6.0.0)
@@ -269,7 +269,7 @@ GEM
     will_paginate (3.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   x64-mingw32
