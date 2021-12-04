@@ -7,8 +7,8 @@ module SessionsHelper
     # Forgets a persistent session.
     def forget(user)
         user.forget
-        cookies.delete(:user_id)
-        cookies.delete(:remember_token)
+        #cookies.delete(:user_id)
+        #cookies.delete(:remember_token)
     end
 
     def remember(user)
@@ -17,18 +17,11 @@ module SessionsHelper
         cookies.permanent[:remember_token] = user.remember_token
     end
 
-    # Returns the current logged-in user (if any).
-    def current_user
-        if session[:user_id]
-           @current_user ||= User.find_by(id: session[:user_id])
-        end
-    end
 
     # Returns the user corresponding to the remember token cookie.
     def current_user
         if (user_id = session[:user_id])
-            user = User.find_by(id: user_id)
-            @current_user ||= user if session[:session_token] == user.session_token
+            @current_user ||= User.find_by(id: user_id)
           elsif (user_id = cookies.encrypted[:user_id])
             user = User.find_by(id: user_id)
             if user && user.authenticated?(:remember, cookies[:remember_token])
@@ -43,6 +36,7 @@ module SessionsHelper
     end
 
     # Returns true if the user is logged in, false otherwise.
+    #Aquí hay un fallo, logged_in o current_user no funciona como debe
     def logged_in?
         !current_user.nil?
     end
